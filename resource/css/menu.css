@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* BODY */
+
+
+
+.first-screen h1 {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.first-screen p {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.first-screen {
+    padding: 2rem;
+    margin: 30px;
+    background: #f5f5f5;
+    border-radius: 50px 50px 5px 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    font-size: 25px;
+    color: #25d2db;
+}
+
+.services li {
+    margin-right: 1.5rem;
+}
+
+.services li:last-child {
+    margin-right: 0;
+}
+
+.services li a {
+    color: #2b2323;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.services li a:hover {
+    color: #11979e;
+}
+
+.menu {
+    background-image: url(../img/menu-back.jpg);
+    background-size: cover;
+    height: 50vh;
+    /* define a altura para 50% da altura da viewport */
+    display: flex;
+    /* ativa Flexbox */
+    justify-content: center;
+    /* alinha os filhos ao centro horizontalmente */
+    align-items: center;
+    /* alinha os filhos ao centro verticalmente */
+    text-align: center;
+    /* alinha o texto ao centro */
+}
+
+.content {
+    width: 70%;
+    /* define a largura do conteúdo para 70% da largura da .menu */
+    max-width: 900px;
+    /* opcional: limita a largura máxima do conteúdo */
+}
+
+.content h1 {
+    font-weight: bold;
+    color: #00ADB5;
+    text-transform: uppercase;
+}
+
+.content p {
+    font-weight: lighter;
+    color: #ffffff;
+    background-color: rgba(54, 52, 52, 0.322);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Container dos cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+    gap: 2em;
+    max-width: 90%; /* Isso limitará o tamanho do contêiner do cartão para 90% da largura da janela */
+    margin: 0 auto; /* Isso irá centralizar o contêiner do cartão */
+}
+
+/* Estilização individual de cada card */
+.card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    margin: 1em; /* Adiciona margens ao redor de cada cartão para dar mais espaço entre eles */
+    transition: transform 0.3s ease-in-out;
+    flex-grow: 1; /* Isso fará com que os cartões ocupem todo o espaço disponível, respeitando as margens e a largura máxima */
+    flex-basis: calc((100% - 4em) / 3); /* Isso define a largura mínima do cartão como um terço da largura do contêiner, subtraído pelo espaço entre os cartões. Ajuste este valor conforme necessário */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #04e4f086;
+    /* escolha a cor que deseja para o efeito de preenchimento */
+    z-index: -1;
+    transition: height 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.card:hover::before {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Estilização do hover para dar um efeito legal ao passar o mouse */
+.card:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+
+/* Icone do card */
+.card .icon {
+    text-align: center;
+    padding: 1em;
+}
+
+/* Descrição do card */
+.card .description {
+    padding: 1em;
+    text-align: center;
+}
+
+.card .description h3 {
+    margin-top: 0;
+}
+
+/* servicos */
+#service-nav {
+    display: flex;
+    justify-content: center; /* centraliza as abas */
+    background-color: #04e4f086;
+    max-width: 70%;
+    padding: 0.5em;
+    margin: 2.5em auto; /* adicione 'auto' após 2.5em para centralizar o elemento */
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.service-tab {
+    cursor: pointer;
+    flex: 1 0 auto;
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.service-tab .tab-text {
+    display: block;
+}
+
+.service-tab .tab-icon {
+    display: none;
+}
+
+.service-tab:hover {
+    background-color: #78e7ec7e;
+    border-radius: 10px;
+}
+
+.service-tab.active {
+    background-color: #407b7e33;
+    border-radius: 10px;
+}
+
+#service-content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    max-width: 60%;
+    margin: 0 auto; /* Adiciona a centralização horizontal */
+
+}
+
+#service-text-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1em; /* aumenta o gap para dar mais espaço entre as linhas de texto */
+}
+
+#service-content img {
+    width: 500px; /* reduz a largura da imagem para fazê-la parecer menor */
+    height: 500px;
+    border-radius: 10px; 
+    margin: 20px;
+}
+
+#service-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#service-title {
+    margin-bottom: 10px; 
+}
+
+.service-tab.selected {
+    background-color: #407b7e33;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Se a tela for menor, ajusta os cards para ficarem um embaixo do outro */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content p {
+        font-weight: lighter;
+        color: #ffffff;
+        font-size: 12px;
+        background-color: rgba(54, 52, 52, 0.582);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #service-nav {
+        flex-direction: row; /* Em pequenas telas, os itens devem ficar um abaixo do outro */
+        align-items: center; /* Centraliza itens em pequenas telas */
+    }
+
+    #service-content {
+        flex-direction: column; /* Em pequenas telas, os itens devem ficar um abaixo do outro */
+    }
+
+    .service-tab .tab-text {
+        display: none;
+    }
+
+    .service-tab .tab-icon {
+        display: block;
+    }
+
+    .services {
+        flex-direction: column;
+        justify-content: center; /* Centraliza itens em pequenas telas */
+        list-style: none;
+        padding: 0;
+        gap: 20px;
+        font-size: 20px; /* Reduz o tamanho da fonte para melhor visualização em pequenas telas */
+        color: #00ADB5;
+    }
+
+    .principal {
+        flex-direction: column; /* Em pequenas telas, os itens devem ficar um abaixo do outro */
+    }
+
+    #service-content img {
+        width: 300px; /* reduz a largura da imagem para fazê-la parecer menor */
+        height: 300px;
+        border-radius: 10px; 
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        list-style: none;
+        padding: 0;
+        gap: 20px;
+        font-size: 30px;
+        color: #00ADB5;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: start;
+    }
+
+    .principal img {
+        display: none;
+    }
+}
