@@ -1,4 +1,5 @@
-<script src="https://kit.fontawesome.com/d13e46f04f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="resource/css/footer.css">
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted" data-aos="fade-up">
   <!-- Section: Social media -->

@@ -4,7 +4,6 @@
 /* BODY */
 
 
-
 .first-screen h1 {
     color: #000000;
     font-family: 'Montserrat', sans-serif;
@@ -22,7 +21,7 @@
 
 .first-screen {
     padding: 2rem;
-    margin: 30px;
+    margin: 100px;
     background: #f5f5f5;
     border-radius: 50px 50px 5px 50px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -160,6 +159,10 @@
 }
 
 /* servicos */
+.nav-serv {
+    background-color: rgb(223, 223, 223);
+    padding: 30px;
+}
 #service-nav {
     display: flex;
     justify-content: center; /* centraliza as abas */
@@ -214,10 +217,9 @@
 }
 
 #service-content img {
-    width: 500px; /* reduz a largura da imagem para fazê-la parecer menor */
+    width: 30vw; /* reduz a largura da imagem para fazê-la parecer menor */
     height: 500px;
     border-radius: 10px; 
-    margin: 20px;
 }
 
 #service-text {
@@ -236,7 +238,9 @@
 }
 
 @media screen and (max-width: 768px) {
-
+    .first-screen {
+        display: none;
+    }
     /* Se a tela for menor, ajusta os cards para ficarem um embaixo do outro */
     .card-container {
         flex-direction: column;
@@ -254,7 +258,6 @@
 
     #service-nav {
         flex-direction: row; /* Em pequenas telas, os itens devem ficar um abaixo do outro */
-        align-items: center; /* Centraliza itens em pequenas telas */
     }
 
     #service-content {
@@ -269,7 +272,7 @@
         display: block;
     }
 
-    .services {
+    #services {
         flex-direction: column;
         justify-content: center; /* Centraliza itens em pequenas telas */
         list-style: none;
@@ -284,26 +287,185 @@
     }
 
     #service-content img {
-        width: 300px; /* reduz a largura da imagem para fazê-la parecer menor */
-        height: 300px;
+        width: 250px; /* reduz a largura da imagem para fazê-la parecer menor */
+        height: 250px;
         border-radius: 10px; 
         margin: 20px;
     }
 }
 
-@media screen and (max-width: 565px) {
+/* card time */
 
-    .services {
-        display: flex;
-        flex-direction: column;
-        justify-content: right;
-        list-style: none;
-        padding: 0;
-        gap: 20px;
-        font-size: 30px;
-        color: #00ADB5;
+.team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centraliza o texto dos headings */
+    margin-top: 50px;
+}
+
+.team-section h2 {
+    font-weight: bold;
+}
+
+.team-section-h3{
+    font-weight: bold;
+}
+
+.highlight {
+    color: #00ADB5; /* Troque '#FF0000' pela cor que você deseja */
+}
+
+.team-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* isso faz com que todos os cards tenham a mesma altura */
+    gap: 1em;
+}
+
+.team-card {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Esconde a parte da imagem que ultrapassar o border-radius */
+    max-width: 200px; /* Ajuste a largura máxima conforme necessário */
+    width: 100%; /* Faz com que o card ocupe todo o espaço disponível até a largura máxima */
+    margin: 1em;
+}
+
+.team-card-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* ajuste este valor para alterar a altura da imagem */
+    object-fit: cover; /* isso fará com que a imagem cubra todo o espaço disponível sem distorção */
+}
+
+.team-card-info {
+    padding: 0.5em; /* diminua este valor para reduzir o espaço ao redor do texto */
+    text-align: left; /* alinha o texto à esquerda */
+}
+
+.team-card-info h3 {
+    margin: 0;
+    font-size: 1.0em;
+    color: #000000;
+}
+
+.team-card-info p {
+    margin: 0.5em 0 0 0;
+    font-size: 0.8em;
+    color: #666666;
+}
+
+@media (min-width: 600px) {
+    .team-cards {
+        flex-direction: row;
+        justify-content: center;
     }
 
+    .team-card {
+        max-width: 300px; /* Ajuste a largura máxima conforme necessário para telas maiores */
+    }
+
+    .team-card-info h3 {
+        font-size: 1.2em;
+    }
+
+    .team-card-info p {
+        font-size: 1em;
+    }
+}
+/* FIM CARD-TIME*/ 
+
+/* Estilização da seção de contatos */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.contact-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-title h2{
+    font-weight: bold;
+}
+
+.contact-title h3 {
+    color: #00ADB5;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Isso permite que os itens se ajustem à largura da tela */
+    width: 80%;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-item a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted #00ADB5; /* Círculo pontilhado ao redor */
+    border-radius: 50%; /* Faz o contorno ficar circular */
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    padding: 30px;
+}
+
+.contact-item h4, .contact-item p {
+    margin: 0;
+}
+
+.contact-item h4 {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #00ADB5;
+    margin-top: 5px;
+}
+
+.contact-item p {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #00ADB5;
+}
+/* Ícones do FontAwesome */
+.contact-section  .fas, .fab {
+    color: #00ADB5;
+    font-size: 30px; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+@media screen and (max-width: 590px) {
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap; /* Isso permite que os itens se ajustem à largura da tela */
+        width: 100%;
+        gap: 50px;
+        margin-left: 50px;
+    }
+    
     .principal {
         display: flex;
         justify-content: start;

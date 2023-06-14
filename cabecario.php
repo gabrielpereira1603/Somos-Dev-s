@@ -15,16 +15,18 @@
         <div class="collapse navbar-collapse mt-4 mt-lg-0" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                
-                <li class="nav-item"><a class="nav-link" href="menu-admin.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.php">Home</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Sistemas Web
                     </a>
                     
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Sistema De Manutenções - Unifunec</a></li>
+                        <li><a class="dropdown-item" href="manutencaolabs.php">Sistema De Manutenções - Unifunec</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Gestão Hospital - AugeCare</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="http://localhost/paracatu/login.php" target="_blank">Sistema De Pedidos - Paracatu</a></li>
                     </ul>
                 </li>
 

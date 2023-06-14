@@ -1,26 +1,26 @@
 <?php
-// No início de cada arquivo de página (como menu.php), ou em um arquivo incluído em todas as páginas:
-session_start();
-$timeout = 1800; // Define o tempo de inatividade permitido em segundos (1800 segundos = 30 minutos)
+// // No início de cada arquivo de página (como menu.php), ou em um arquivo incluído em todas as páginas:
+// session_start();
+// $timeout = 1800; // Define o tempo de inatividade permitido em segundos (1800 segundos = 30 minutos)
 
-if(isset($_SESSION['loggedin'])) {
-    // Verifica se o tempo de inatividade foi excedido
-    if($_SESSION['last_activity'] < time()-$timeout) {
-        // Tempo de inatividade excedido, encerra a sessão
-        session_unset();
-        session_destroy();
-        echo "Sua sessão expirou! Por favor, faça login novamente.";
-        exit;
-    } else {
-        // Atualiza o carimbo de data/hora da última atividade
-        $_SESSION['last_activity'] = time();
-    }
-} else {
-    // Usuário não está logado, redireciona para a página de login
-    header("Location: index.php");
-    exit;
-}
-include("conexao.php");
+// if(isset($_SESSION['loggedin'])) {
+//     // Verifica se o tempo de inatividade foi excedido
+//     if($_SESSION['last_activity'] < time()-$timeout) {
+//         // Tempo de inatividade excedido, encerra a sessão
+//         session_unset();
+//         session_destroy();
+//         echo "Sua sessão expirou! Por favor, faça login novamente.";
+//         exit;
+//     } else {
+//         // Atualiza o carimbo de data/hora da última atividade
+//         $_SESSION['last_activity'] = time();
+//     }
+// } else {
+//     // Usuário não está logado, redireciona para a página de login
+//     header("Location: index.php");
+//     exit;
+// }
+// include("conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ include("conexao.php");
         <title>Somos Dev's</title>
     </head>
     
-    <body style="background-color:#baebee6b;">
+    <body style="background-color:whinte;">
 
     <?php
         include("cabecario.php");
@@ -98,55 +98,97 @@ include("conexao.php");
             </div>
 
         </div>
+        <section class="nav-serv">
 
-        <div id="service-nav" data-aos="fade-up">
-            <div class="service-tab" data-target="web-systems" data-aos="fade-up">
-                <span class="tab-text">Sistemas Web</span>
-                <i class="tab-icon fas fa-globe"></i>
+            <div id="service-nav" data-aos="fade-up">
+                <div class="service-tab" data-target="web-systems" data-aos="fade-up">
+                    <span class="tab-text">Sistemas Web</span>
+                    <i class="tab-icon fas fa-globe"></i>
+                </div>
+                <div class="service-tab" data-target="desktop-systems" data-aos="fade-up">
+                    <span class="tab-text">Sistemas Desktop</span>
+                    <i class="tab-icon fas fa-desktop"></i>
+                </div>
+                <div class="service-tab" data-target="lanepages" data-aos="fade-up">
+                    <span class="tab-text">Lanepages</span>
+                    <i class="tab-icon fas fa-file-alt"></i>
+                </div>
+                <div class="service-tab" data-target="layouts" data-aos="fade-up">
+                    <span class="tab-text">Layouts</span>
+                    <i class="tab-icon fas fa-drafting-compass"></i>
+                </div>
             </div>
-            <div class="service-tab" data-target="desktop-systems" data-aos="fade-up">
-                <span class="tab-text">Sistemas Desktop</span>
-                <i class="tab-icon fas fa-desktop"></i>
+
+            <div id="service-content" data-aos="fade-up">
+                <img id="service-img" src="" alt="" data-aos="fade-up">
+                <div id="service-text-content">
+                    <h2 id="service-title" data-aos="fade-up"></h2>
+                    <p id="service-description" data-aos="fade-up"></p>
+                    <h3 id="sub-title-1" data-aos="fade-up"></h3>
+                    <p id="sub-description-1" data-aos="fade-up"></p>
+                    <h3 id="sub-title-2" data-aos="fade-up"></h3>
+                    <p id="sub-description-2" data-aos="fade-up"></p>
+                </div>
             </div>
-            <div class="service-tab" data-target="lanepages" data-aos="fade-up">
-                <span class="tab-text">Lanepages</span>
-                <i class="tab-icon fas fa-file-alt"></i>
-            </div>
-            <div class="service-tab" data-target="layouts" data-aos="fade-up">
-                <span class="tab-text">Layouts</span>
-                <i class="tab-icon fas fa-drafting-compass"></i>
+        </section>
+        <div class="team-section" data-aos="fade-up">
+            <h2 data-aos="fade-up">Time</h2>
+            <h3 class="team-section-h3">Nosso <span class="highlight">Time</span></h3>
+            <div class="team-cards">
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="resource/img/gabriel.jpg" alt="nome-do-funcionario" >
+                    </div>
+                    <div class="team-card-info">
+                        <h3>Gabriel Alves Pereira</h3>
+                        <p>Desenvolvedor Web Full Stack & CEO</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="resource/img/joaocaetano.jpg" alt="nome-do-funcionario">
+                    </div>
+                    <div class="team-card-info">
+                        <h3>João Caetano Lima Remonato</h3>
+                        <p>Desenvolvedor C#</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="service-content" data-aos="fade-up">
-            <img id="service-img" src="" alt="" data-aos="fade-up">
-            <div id="service-text-content">
-                <h2 id="service-title" data-aos="fade-up"></h2>
-                <p id="service-description" data-aos="fade-up"></p>
-                <h3 id="sub-title-1" data-aos="fade-up"></h3>
-                <p id="sub-description-1" data-aos="fade-up"></p>
-                <h3 id="sub-title-2" data-aos="fade-up"></h3>
-                <p id="sub-description-2" data-aos="fade-up"></p>
+        <div class="contact-section" data-aos="fade-up">
+
+            <div class="contact-title" data-aos="fade-up">
+                <h2>Contatos</h2>
+                <h3>Nos Contate</h3>
+            </div>
+
+            <div class="contact-info" data-aos="fade-up">
+                <div class="contact-item">
+                    <a href="mailto:seuemail@exemplo.com">
+                        <i class="fas fa-envelope"></i> 
+                    </a>
+                    <h4>E-mail</h4>
+                    <p>somosdevs@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.instagram.com/seuInstagram" target="_blank">
+                        <i class="fab fa-instagram"></i> 
+                    </a>
+                    <h4>Instagram</h4>
+                    <p>@somosdevs</p>
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/seunumero" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <h4>WhatsApp</h4>
+                    <p>(67) 98195-7833</p>
+                </div>
             </div>
         </div>
                 
-        <div class="first-screen" data-aos="fade-up">
-
-            <h1>Soluções Tecnologicas para Empresas</h1>
-            <p>
-                Aqui na Somos Dev's, acreditamos que a tecnologia é muito mais do que apenas desenvolvimento de sistemas web/desktop. O nosso trabalho é investir em soluções abrangentes e inovadoras que resolvam os desafios digitais do dia a dia do seu negócio.
-                Trabalhamos de forma integrada com a sua empresa, compreendendo suas necessidades individuais e personalizando nossas soluções de acordo. Nossos desenvolvedores especializados não apenas criam sistemas web robustos e confiáveis, mas também 
-                se dedicam a entender a sua visão, seus objetivos comerciais e suas metas de crescimento.
-            </p>
-
-            <ul class="services">
-                <li>Nossos Serviços:</li>
-                <li><a href="#">Sistemas Web</a></li>
-                <li><a href="#">Sistemas Desktop</a></li>
-                <li><a href="#">Lanepages</a></li>
-                <li><a href="#">Layouts</a></li>
-            </ul>
-        </div>
     </main>
 
     <?php
@@ -166,9 +208,9 @@ include("conexao.php");
             title: "Sistemas Web",
             description: "Os sistemas web oferecem flexibilidade e acessibilidade, permitindo que você conduza seus negócios de qualquer lugar.",
             subTitle1: "Acessibilidade universal",
-            subDescription1: "Os sistemas web podem ser acessados de qualquer lugar do mundo, desde que haja uma conexão com a internet. Isso significa que sua equipe pode trabalhar de qualquer lugar e os clientes podem acessar seus serviços a qualquer hora.",
+            subDescription1: "Os sistemas web podem ser acessados de qualquer lugar do mundo, desde que haja uma conexão com a internet.",
             subTitle2: "Manutenção facilitada",
-            subDescription2: "Com sistemas web, atualizações e manutenções podem ser implementadas diretamente no servidor e refletidas imediatamente para todos os usuários, o que evita a necessidade de instalação de patches ou atualizações no dispositivo do usuário.",
+            subDescription2: "Com sistemas web, atualizações e manutenções podem ser implementadas diretamente no servidor e refletidas imediatamente para todos os usuários",
             },
             "desktop-systems": {
                 img: "resource/img/sistema-desktop.jpg",
@@ -177,7 +219,7 @@ include("conexao.php");
                 subTitle1: "Alto desempenho",
                 subDescription1: "Os sistemas desktop são conhecidos por seu desempenho superior em relação aos sistemas web, pois podem aproveitar diretamente os recursos de hardware do computador local.",
                 subTitle2: "Segurança aprimorada",
-                subDescription2: "Como os dados em sistemas desktop podem ser armazenados localmente, eles não estão sujeitos às mesmas vulnerabilidades de segurança que os sistemas baseados na web podem enfrentar.",
+                subDescription2: "Como os dados em sistemas desktop podem ser armazenados localmente.",
             },
             "lanepages": {
                 img: "resource/img/lanepage.jpg",
