@@ -50,8 +50,6 @@
             <div class="menu-section">
                 
                 <section id="description-section">
-                    <a href="https://www.mediafire.com/file/j8wwn6bxe7qklrx/facebook_cover_photo_2.png/file" download>Baixe nosso aplicativo de desktop</a>
-
                     <h2>Descrição do Sistema</h2>
                     <p>O Sistema de Manutenção de Laboratórios da UNIFUNEC foi desenvolvido com o intuito de proporcionar uma solução abrangente para a gestão eficiente dos recursos dos laboratórios de informática. Com este sistema, os alunos têm a capacidade de comunicar quaisquer problemas ou falhas que encontrem nas estações de trabalho do laboratório. Essas informações são diretamente encaminhadas à equipe de TI, que pode agir de forma rápida e eficiente para resolver as questões levantadas.</p>
 
@@ -97,9 +95,9 @@
                     </form>
                 </div>
                 <div class="info-container">
+                    <img src="resource/img/logo-completa-verde.png" alt="Imagem explicativa">
                     <h2>Por que escolher nosso sistema?</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis ligula ut lacinia ultricies. Integer semper arcu nec turpis euismod, vel dignissim risus dapibus.</p>
-                    <img src="resource/img/Nova pasta/logo.png" alt="Imagem explicativa">
                 </div>
             </section>
 
